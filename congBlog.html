@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+    <link href="css/congBlogDeCss.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+<div id="title">
+    <div id="title-top">
+        <div id="title-top-left">
+            <a href="#">Nan</a>
+        </div>
+        <div id="title-top-right">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">TAGS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="title-bottom">
+        <p id="nan">Nan</p>
+        <p id="la">啦啦啦，啦啦啦，我是卖报的小行家</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="container-left">
+            <div class="container-left-l">
+                <div class="article-info">
+                    <a class="a1" href="#">开始时的岁岁念</a>
+                    <a class="a2" href="#">关于机器学习的一些碎碎念</a>
+                    <a class="a3" href="#"><em>“Ok,let’s start!” 机器学习的一些资源 Coursera上的机器学习课程，斯坦福大学教授 Andrew Ng（对，就是百度的吴恩达）的课程，内容由浅入深，并且有一些练习题辅助理解。强烈推荐！！！ （使用软件，Matlab or Octave） 极客学院有tensorflow的中文文档 版本和内容有点旧了，食用时注意一些过期的方法。</em></a>
+                </div>
+                <!--<a class="a1" href="#">开始时的岁岁念</a>-->
+                <!--<a class="a2" href="#">关于机器学习的一些碎碎念</a>-->
+                <!--<a class="a3" href="#"><em>“Ok,let’s start!” 机器学习的一些资源 Coursera上的机器学习课程，斯坦福大学教授 Andrew Ng（对，就是百度的吴恩达）的课程，内容由浅入深，并且有一些练习题辅助理解。强烈推荐！！！ （使用软件，Matlab or Octave） 极客学院有tensorflow的中文文档 版本和内容有点旧了，食用时注意一些过期的方法。</em></a>-->
+                <p class="p1"><em>Posted by Xiang on February 5, 2017</em></p>
+            </div><hr>
+            <div class="container-left-l">
+                <div class="article-info">
+                    <a class="a1" href="#">Hello Blog</a>
+                    <a class="a2" href="#">基于jekyll的Markdown博客</a>
+                    <a class="a3" href="#"><em>┗ ｀O′ ┛ 嗷~~ xianshi</em></a>
+                </div>
+                <p class="p1"><em>Posted by Xiang on January 17, 2017</em></p>
+            </div><hr>
+            <div class="container-left-l">
+                <a class="a1" href="#">Hello 2015 - by Hux念</a>
+                <a class="a2" href="#">"Hello World, Hello Blog"</a>
+                <a class="a3" href="#"><em>“Yeah It’s on. ” 前言 Hux 的 Blog 就这么开通了。 跳过废话，直接看技术实现 2015 年，Hux 总算有个地方可以好好写点东西了。 作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。 在玩了</em></a>
+                <p class="p1"><em>PPosted by Hux on January 29, 2015</em></p>
+            </div><hr>
+        </div>
+        <div class="container-right">
+            <hr>
+            <div class="container-right-r">
+                <a class="container-right-title" href="#">FEATURED TAGS</a><br>
+                <a class="life" href="#">生活</a>
+            </div><hr>
+            <div class="container-right-r">
+                <a class="container-right-title" href="#">ABOUT ME</a><br>
+                <img src="jpg/hu1.jpg">
+                <p class="p2">sidebar描述</p>
+            </div><hr>
+            <div class="container-right-r">
+                <p class="container-right-title">FRIENDS</p><br>
+                <a class="p2">Hux</a>
+                <a class="p2">Su</a>
+                <a class="p2">乱序</a>
+                <a class="p2">前端外刊评论</a>
+                <a class="p2">天镶的博客</a>
+                <a class="p2">Luke 的自留地</a>
+                <a class="p2">Ebn's Blog</a>
+                <a class="p2">SmdCn's Blog</a>
+                <a class="p2">解旻的博客</a>
+                <a class="p2">DHong Say</a>
+                <a class="p2">尹峰以为</a>
+                <a class="p2">前端神盾局</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="last">
+
+
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        //向上滑动出现吸顶效果
+        var previous_m = 0;
+        $(window).on('scroll', {}, function(){
+            var m =$(document).scrollTop();
+            if(previous_m > m && m!==0){      //往上滑动的时候
+                $("#title-top").addClass("title-top-1");
+            }else{
+                $("#title-top").removeClass("title-top-1");
+            }
+            previous_m = m;
+        });
+        //不是当前页面即出现吸顶效果
+//        $(window).on("scroll",function(){
+//            var m = $(document).scrollTop();
+//            if(m !== 0){
+//                $("#title-top").addClass("title-top-1");
+//            }else{
+//                $("#title-top").removeClass("title-top-1");
+//            }
+//        });
+
+//        $(".a3").mouseenter(function(){
+//            $(this).parent().children().siblings("a").css("color","#48D1CC");
+//        });
+//        $(".a3").mouseleave(function(){
+//            $(this).parent().children().siblings("a").css("color","black");
+//        });
+//
+//        $(".a1").mouseenter(function(){
+//            $(this).css("color","#48D1CC");
+//            $(this).parent().children().eq(1).css("color","#48D1CC");
+//        });
+//        $(".a1").mouseleave(function(){
+//            $(this).css("color","black");
+//            $(this).parent().children().eq(1).css("color","black");
+//        });
+//
+//        $(".a2").mouseenter(function(){
+//            $(this).css("color","#48D1CC");
+//            $(this).parent().children().eq(0).css("color","#48D1CC");
+//        });
+//        $(".a2").mouseleave(function(){
+//            $(this).css("color","black");
+//            $(this).parent().children().eq(0).css("color","black");
+//        });
+
+
+
+    })
+</script>
+</html>
